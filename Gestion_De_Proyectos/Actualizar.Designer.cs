@@ -36,13 +36,14 @@
             this.tbProductoActualizar = new System.Windows.Forms.TextBox();
             this.tbCategoriaActualizar = new System.Windows.Forms.TextBox();
             this.tbPrecioActualizar = new System.Windows.Forms.TextBox();
+            this.bActualizar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelActualizar
             // 
             this.labelActualizar.AutoSize = true;
             this.labelActualizar.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.8F);
-            this.labelActualizar.Location = new System.Drawing.Point(118, 28);
+            this.labelActualizar.Location = new System.Drawing.Point(44, 9);
             this.labelActualizar.Name = "labelActualizar";
             this.labelActualizar.Size = new System.Drawing.Size(561, 31);
             this.labelActualizar.TabIndex = 2;
@@ -51,7 +52,7 @@
             // cbActualizar
             // 
             this.cbActualizar.FormattingEnabled = true;
-            this.cbActualizar.Location = new System.Drawing.Point(168, 81);
+            this.cbActualizar.Location = new System.Drawing.Point(94, 62);
             this.cbActualizar.Name = "cbActualizar";
             this.cbActualizar.Size = new System.Drawing.Size(452, 24);
             this.cbActualizar.TabIndex = 3;
@@ -59,7 +60,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(81, 217);
+            this.label1.Location = new System.Drawing.Point(93, 243);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(61, 16);
             this.label1.TabIndex = 4;
@@ -68,7 +69,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(356, 217);
+            this.label2.Location = new System.Drawing.Point(283, 243);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(66, 16);
             this.label2.TabIndex = 5;
@@ -77,7 +78,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(652, 217);
+            this.label3.Location = new System.Drawing.Point(500, 243);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 16);
             this.label3.TabIndex = 6;
@@ -85,32 +86,44 @@
             // 
             // tbProductoActualizar
             // 
-            this.tbProductoActualizar.Location = new System.Drawing.Point(62, 236);
+            this.tbProductoActualizar.Location = new System.Drawing.Point(50, 262);
             this.tbProductoActualizar.Name = "tbProductoActualizar";
             this.tbProductoActualizar.ReadOnly = true;
-            this.tbProductoActualizar.Size = new System.Drawing.Size(100, 22);
+            this.tbProductoActualizar.Size = new System.Drawing.Size(143, 22);
             this.tbProductoActualizar.TabIndex = 7;
             // 
             // tbCategoriaActualizar
             // 
-            this.tbCategoriaActualizar.Location = new System.Drawing.Point(340, 236);
+            this.tbCategoriaActualizar.Location = new System.Drawing.Point(251, 262);
             this.tbCategoriaActualizar.Name = "tbCategoriaActualizar";
             this.tbCategoriaActualizar.ReadOnly = true;
-            this.tbCategoriaActualizar.Size = new System.Drawing.Size(100, 22);
+            this.tbCategoriaActualizar.Size = new System.Drawing.Size(137, 22);
             this.tbCategoriaActualizar.TabIndex = 8;
             // 
             // tbPrecioActualizar
             // 
-            this.tbPrecioActualizar.Location = new System.Drawing.Point(625, 236);
+            this.tbPrecioActualizar.Location = new System.Drawing.Point(473, 262);
             this.tbPrecioActualizar.Name = "tbPrecioActualizar";
             this.tbPrecioActualizar.Size = new System.Drawing.Size(100, 22);
             this.tbPrecioActualizar.TabIndex = 9;
+            // 
+            // bActualizar
+            // 
+            this.bActualizar.Location = new System.Drawing.Point(234, 330);
+            this.bActualizar.Name = "bActualizar";
+            this.bActualizar.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.bActualizar.Size = new System.Drawing.Size(171, 23);
+            this.bActualizar.TabIndex = 10;
+            this.bActualizar.Text = "ACTUALIZAR";
+            this.bActualizar.UseVisualStyleBackColor = true;
+            this.bActualizar.Click += new System.EventHandler(this.bActualizarPrecio);
             // 
             // Actualizar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(659, 450);
+            this.Controls.Add(this.bActualizar);
             this.Controls.Add(this.tbPrecioActualizar);
             this.Controls.Add(this.tbCategoriaActualizar);
             this.Controls.Add(this.tbProductoActualizar);
@@ -136,5 +149,6 @@
         private System.Windows.Forms.TextBox tbProductoActualizar;
         private System.Windows.Forms.TextBox tbCategoriaActualizar;
         private System.Windows.Forms.TextBox tbPrecioActualizar;
+        private System.Windows.Forms.Button bActualizar;
     }
 }

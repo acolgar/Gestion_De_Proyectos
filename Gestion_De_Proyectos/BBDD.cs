@@ -38,6 +38,8 @@ namespace Gestion_De_Proyectos
                     {
                         cmd.Parameters.Add(nombre);
                         cmd.Parameters.Add(categoria);
+
+                        //Añadimos la escala para que solo tenga 2 decimales el precio
                         precio.SqlDbType = SqlDbType.Decimal;
                         precio.Scale = 2;
                         cmd.Parameters.Add(precio);
