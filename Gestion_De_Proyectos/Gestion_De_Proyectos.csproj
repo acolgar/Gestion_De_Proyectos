@@ -97,6 +97,9 @@
     <EmbeddedResource Include="Actualizar.resx">
       <DependentUpon>Actualizar.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Consultar_Categoria.resx">
+      <DependentUpon>Consultar_Categoria.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Eliminar.resx">
       <DependentUpon>Eliminar.cs</DependentUpon>
     </EmbeddedResource>

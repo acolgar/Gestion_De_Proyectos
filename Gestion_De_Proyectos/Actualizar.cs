@@ -30,8 +30,26 @@ namespace Gestion_De_Proyectos
 
         private void bActualizarPrecio(object sender, EventArgs e)
         {
-            
+            string precioAntiguo = cbActualizar.SelectedItem.ToString().Split('|')[2].Trim();
+            decimal nuevoPrecio = decimal.Parse(tbPrecioActualizar.Text);
+            string nombreProducto = cbActualizar.SelectedItem.ToString().Split('|')[0].Trim();
 
+
+            // Pregunta al usuario si desea cambiar el valor
+            DialogResult dialogResult = MessageBox.Show($"¿Desea cambiar el precio del producto {nombreProducto} de {precioAntiguo} a {nuevoPrecio}?", "Confirmación", MessageBoxButtons.YesNo);
+            if (dialogResult == DialogResult.Yes)
+            {
+                // Actualizar el precio
+                BBDD.actualizarPrecioProducto(nombreProducto, nuevoPrecio);
+
+                //Informar al usuario de que la actualización ha sido correcta
+                MessageBox.Show("Precio actualizado correctamente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                //Informar al usuario de que la actualización ha sido cancelada
+                MessageBox.Show("Actualización cancelada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
         }
     }
 }

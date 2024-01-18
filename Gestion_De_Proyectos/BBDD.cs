@@ -115,5 +115,43 @@ namespace Gestion_De_Proyectos
                 }
             }
         }
+
+        public static void actualizarPrecioProducto(string nombre, decimal nuevoPrecio)
+        {
+            string instruccionSql = "UPDATE dbo.Producto SET Precio = @precio WHERE Nombre = @nombre;";
+            using (SqlConnection conn = getConexion())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(instruccionSql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@nombre", nombre);
+                    cmd.Parameters.AddWithValue("@precio", nuevoPrecio);
+                    cmd.ExecuteNonQuery();
+                }
+            }
+        }
+
+        public static List<string> obtenerProductosPorCategoria(string categoria)
+        {
+            List<string> productos = new List<string>();
+            string instruccionSql = "SELECT * FROM dbo.Producto WHERE Categoria = @categoria;";
+            using (SqlConnection conn = getConexion())
+            {
+                conn.Open();
+                using (SqlCommand cmd = new SqlCommand(instruccionSql, conn))
+                {
+                    cmd.Parameters.AddWithValue("@categoria", categoria);
+                    SqlDataReader reader = cmd.ExecuteReader();
+                    while (reader.Read())
+                    {
+                        string item = $"{reader["Nombre"]} | {reader["Categoria"]} | {reader["Precio"]}";
+                        productos.Add(item);
+                    }
+                }
+            }
+            return productos;
+        }
+
+
     }
 }
